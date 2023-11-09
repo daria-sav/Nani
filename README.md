@@ -2,46 +2,52 @@
 Programmeerimise projekt "Schedule Dashboard". Selles projektis sooviksime luua Pythonis kalender, kus kasutaja saab valida päeva või nädal. Valides päeva, ta saab lisada sinna uusi ülesandeid, kustutada neid ja märkida teostatud.  Ilusti vormistama seda graafilises liides.
 Изучение Tkinter:
 
-Прочитай основные концепции Tkinter, такие как окна, виджеты, размещение элементов и обработка событий.
-Посмотри примеры кода для создания простых графических интерфейсов с использованием Tkinter.
-Установка и изучение tkcalendar:
+1. Learn Tkinter:
 
-Установи библиотеку tkcalendar с помощью pip install tkcalendar.
-Прочитай документацию на GitHub, чтобы узнать, как использовать tkcalendar в своем приложении.
-Создание основного окна:
+Study the basic concepts of Tkinter, such as windows, widgets, layout, and event handling.
+Look at code examples for creating simple graphical interfaces using Tkinter.
 
-Инициализируй основное окно Tkinter.
-Добавь заголовок и определи размеры окна.
-Добавление календаря:
+2. Install and learn tkcalendar:
+Install the tkcalendar library using pip install tkcalendar.
+Read the documentation on GitHub to understand how to use tkcalendar in your application.
 
-Интегрируй tkcalendar в свое приложение.
-Размести календарь в нужной области окна.
-Работа с текстовым файлом:
+3. Create the main window:
+Initialize the main Tkinter window.
+Add a title and set the window dimensions.
 
-Создай функции для записи и чтения данных из текстового файла.
-Определи формат данных в файле, например, каждая строка может представлять один день с задачами.
-Интерфейс для задач:
+4. Add the calendar:
+Integrate tkcalendar into your application.
+Place the calendar in the desired area of the window.
 
-Добавь элементы интерфейса для ввода задач.
-Создай кнопки для добавления задач в текстовый файл.
-Отображение задач на календаре:
+5. Work with a text file:
+Create functions to write and read data from a text file.
+Define the data format in the file, for example, each line could represent one day with tasks.
 
-Реализуй функционал, который позволит отмечать дни с задачами на календаре.
-Манипуляции с данными в файле:
+6. Task Interface:
+Add interface elements for entering tasks.
+Create buttons for adding tasks to the text file.
 
-Добавь возможность редактировать и удалять задачи из текстового файла.
-Тестирование:
+7. Display tasks on the calendar:
+Implement functionality to mark days with tasks on the calendar.
 
-Проведи тестирование приложения, убедись, что календарь работает корректно, и задачи сохраняются в текстовом файле.
-Доработка и улучшение:
+8.Manipulate data in the file:
+Add the ability to edit and delete tasks from the text file.
 
-Реализуй возможность отмечать выполнение задач.
-Добавь опции для редактирования и удаления задач.
-Документация и оптимизация:
+9. Testing:
+Conduct testing of the application to ensure that the calendar works correctly and tasks are saved in the text file.
 
-Напиши краткую документацию к коду.
-Проведи оптимизацию кода, если необходимо.
-Завершение:
+10. Refinement and Improvement:
+Implement the ability to mark task completion.
+Add options for editing and deleting tasks.
 
-Проверь, что все функции работают корректно.
-Подготовь свой проект к релизу.
+11. Documentation and Optimization:
+Write brief documentation for the code.
+Optimize the code if necessary.
+
+12. Completion:
+Verify that all functions work correctly.
+Prepare your project for release.
+
+
+
+задачи до 16. понять, как работает календарь и добавить его в графику. создать файл, в который пойдут задачи. соединить его с календарем
