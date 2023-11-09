@@ -29,7 +29,7 @@ Create buttons for adding tasks to the text file.
 7. Display tasks on the calendar:
 Implement functionality to mark days with tasks on the calendar.
 
-8.Manipulate data in the file:
+8. Manipulate data in the file:
 Add the ability to edit and delete tasks from the text file.
 
 9. Testing:
