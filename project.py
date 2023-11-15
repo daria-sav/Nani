@@ -36,8 +36,8 @@ kalender = Calendar(juur, selectmode='day', year=2023, month=11, day=9)
 kalender.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
 
 # Sisestusvälja loomine ülesande jaoks
-ülesande_sisestus = tk.Entry(juur, width=30)
-ülesande_sisestus.grid(row=1, column=0, padx=10, pady=10, columnspan=2)
+sisestatud_tekst = tk.Entry(juur, width=30)
+sisestatud_tekst.grid(row=1, column=0, padx=10, pady=10, columnspan=2)
 
 #Nupp ülesande lisamiseks
 lisa_nupp = tk.Button(juur, text="Lisa ülesanne", command=ülesanne_lisamine)
