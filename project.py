@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkcalendar import Calendar
+
 ###
 import json
 
@@ -8,7 +9,9 @@ def ülesanne_lisamine():
     ülesande_tekst = sisestatud_tekst.get()
 
     # märkeruudu lisamine
+
     märkeruut = tk.Checkbutton(ülesannete_kuvamine, command=lambda: märki_ülesanne_täidetuks(märkeruut, valitud_kuupäev, ülesande_tekst))
+
     ülesannete_kuvamine.window_create(tk.END, window=märkeruut)
 
     # ülesanne lisamine tekstivälja
@@ -22,6 +25,7 @@ def ülesanne_lisamine():
     sisestatud_tekst.delete(0, tk.END)
 
 def märki_ülesanne_täidetuks(märkeruut, valitud_kuupäev, ülesande_tekst):
+
     # see kriipsutab vastava ülesande üle, kui märkeruut on märgitud
     ülesande_indeks = ülesannete_kuvamine.index(tk.CURRENT)
     ülesannete_kuvamine.tag_add("tehtud", f"{ülesande_indeks} linestart", f"{ülesande_indeks} lineend")
@@ -94,6 +98,7 @@ juur.title("Kalender ülesannetega")
 kalender = Calendar(juur, selectmode='day', year=2023, month=11, day=9)
 kalender.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
 
+
 sisestatud_tekst = tk.Entry(juur, width=30)
 sisestatud_tekst.grid(row=1, column=0, padx=10, pady=10, columnspan=2)
 
@@ -108,3 +113,4 @@ lisa_nupp.grid(row=1, column=2, pady=5)
 #Nupp ülesande lisamiseks
 kalender.bind("<<CalendarSelected>>", uuenda_ülesannete_kuvamist)
 juur.mainloop()
+
