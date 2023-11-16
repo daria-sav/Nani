@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkcalendar import Calendar
+from datetime import datetime
 
 def ülesanne_lisamine():
     valitud_kuupäev = kalender.get_date()
@@ -28,11 +29,12 @@ def uuenda_ülesannete_kuvamist(sündmus):
     # siit pärast saame laadida valitud päeva ülesanded failist
     # ja kuvada need tekstiväljal
 
+täna = datetime.today()
 juur = tk.Tk()
 juur.title("Kalender ülesannetega")
 
 # Kalendri loomine
-kalender = Calendar(juur, selectmode='day', year=2023, month=11, day=9)
+kalender = Calendar(juur, selectmode='day', year=täna.year, month=täna.month, day=täna.day)
 kalender.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
 
 # Sisestusvälja loomine ülesande jaoks
