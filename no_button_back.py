@@ -1,18 +1,50 @@
 import tkinter as tk
 from tkcalendar import Calendar
+from datetime import datetime
 
 ###
 import json
 
+# Define the checkbuttons list at the global level
+checkbuttons = []
+checkbutton_states = {}
+
+def load_existing_tasks():
+    tasks = load_all_tasks()
+    for task in tasks:
+        valitud_kuupäev = task['date']
+        ülesande_tekst = task['text']
+        task_id = task['id']
+
+        # Recreate Checkbuttons for existing tasks
+        märkeruut = tk.Checkbutton(ülesannete_kuvamine, command=lambda id=task_id, date=valitud_kuupäev, text=ülesande_tekst: märki_ülesanne_täidetuks(id, date, text))
+        ülesannete_kuvamine.window_create(tk.END, window=märkeruut)
+
+        # Update Checkbuttons' states
+        if task_id in checkbutton_states:
+            märkeruut.select()
+
+        checkbuttons.append(märkeruut)
+        
 def ülesanne_lisamine():
     valitud_kuupäev = kalender.get_date()
     ülesande_tekst = sisestatud_tekst.get()
+    
+        
+    # genereeri unikaalne task_id
+    task_id = int(datetime.timestamp(datetime.now()) * 1000)
 
     # märkeruudu lisamine
-
-    märkeruut = tk.Checkbutton(ülesannete_kuvamine, command=lambda: märki_ülesanne_täidetuks(märkeruut, valitud_kuupäev, ülesande_tekst))
-
+    check_var = tk.BooleanVar()
+    märkeruut = tk.Checkbutton(ülesannete_kuvamine, variable=check_var, command=lambda var=check_var, id=task_id, date=valitud_kuupäev, text=ülesande_tekst: märki_ülesanne_täidetuks(var, id, date, text))
     ülesannete_kuvamine.window_create(tk.END, window=märkeruut)
+    
+    # store a reference to the Checkbutton and its associated variable
+    checkbuttons.append((märkeruut, check_var))
+    
+    #№№ Update Checkbuttons' states
+    if task_id in checkbutton_states:
+        märkeruut.select()
 
     # ülesanne lisamine tekstivälja
     ülesanne_koos_märkeruuduga = f"{valitud_kuupäev}: {ülesande_tekst}\n"
@@ -21,11 +53,16 @@ def ülesanne_lisamine():
     ### Сохранение задачи в файл
     save_task({"id": task_id, "date": valitud_kuupäev, "text": ülesande_tekst})
 
+    # Store Checkbutton state
+    checkbutton_states[task_id]  = check_var.get()
+
     # sisestusvälja puhastamine
     sisestatud_tekst.delete(0, tk.END)
 
-def märki_ülesanne_täidetuks(märkeruut, valitud_kuupäev, ülesande_tekst):
-
+def märki_ülesanne_täidetuks(task_id, valitud_kuupäev, ülesande_tekst, check_var):
+    #№№ Update Checkbuttons' states
+    checkbutton_states[task_id] = check_var.get()
+    
     # see kriipsutab vastava ülesande üle, kui märkeruut on märgitud
     ülesande_indeks = ülesannete_kuvamine.index(tk.CURRENT)
     ülesannete_kuvamine.tag_add("tehtud", f"{ülesande_indeks} linestart", f"{ülesande_indeks} lineend")
@@ -98,7 +135,6 @@ juur.title("Kalender ülesannetega")
 kalender = Calendar(juur, selectmode='day', year=2023, month=11, day=9)
 kalender.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
 
-
 sisestatud_tekst = tk.Entry(juur, width=30)
 sisestatud_tekst.grid(row=1, column=0, padx=10, pady=10, columnspan=2)
 
@@ -112,5 +148,10 @@ lisa_nupp.grid(row=1, column=2, pady=5)
 
 #Nupp ülesande lisamiseks
 kalender.bind("<<CalendarSelected>>", uuenda_ülesannete_kuvamist)
+
+# Start the Tkinter main loop
 juur.mainloop()
+
+# Load existing tasks and recreate Checkbuttons when the application starts
+load_existing_tasks()
 
