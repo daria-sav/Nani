@@ -1,52 +1,39 @@
-# Nani
-Programmeerimise projekt "Schedule Dashboard". Selles projektis sooviksime luua Pythonis kalender, kus kasutaja saab valida päeva või nädal. Valides päeva, ta saab lisada sinna uusi ülesandeid, kustutada neid ja märkida teostatud.  Ilusti vormistama seda graafilises liides.
+**Ülesanded enne projekti:**
+   **Programmeerimise projekt "Schedule Dashboard".** 
+   Selles projektis sooviksime luua Pythonis kalender, kus kasutaja saab valida päeva või nädala. Valides päeva, ta saab lisada sinna uusi ülesandeid, kustutada neid ja märkida teostatuks. Soovime selle kujundada visuaalselt atraktiivseks graafiliseks liideseks.
 
-1. Learn Tkinter:
+1. **Õpi Tkinter:**
+   Õpi tundma Tkinteri põhikontseptsioone, nagu aknad, vidinad, paigutus ja sündmuste käsitlemine. Vaata koodinäiteid lihtsate graafiliste liideste loomiseks Tkinteriga.
 
-Study the basic concepts of Tkinter, such as windows, widgets, layout, and event handling.
-Look at code examples for creating simple graphical interfaces using Tkinter.
+2. **Installi ja õpi tkcalendar:**
+   Installi tkcalendar raamatukogu, kasutades käsku "pip install tkcalendar". Loe dokumentatsiooni GitHubis, et mõista, kuidas kasutada tkcalendarit oma rakenduses.
 
-2. Install and learn tkcalendar:
-Install the tkcalendar library using pip install tkcalendar.
-Read the documentation on GitHub to understand how to use tkcalendar in your application.
+3. **Loo põhiaken:**
+   Algata peamine Tkinteri aken. Lisa tiitel ja määra akna mõõtmed.
 
-3. Create the main window:
-Initialize the main Tkinter window.
-Add a title and set the window dimensions.
+4. **Lisa kalender:**
+   Integreeri tkcalendar oma rakendusse. Paiguta kalender akna soovitud piirkonda.
 
-4. Add the calendar:
-Integrate tkcalendar into your application.
-Place the calendar in the desired area of the window.
+5. **Tööta tekstifailiga:**
+   Loo funktsioonid andmete kirjutamiseks ja lugemiseks tekstifailist. Määratle andmete vorming failis, näiteks võiks iga rida esindada üht päeva koos ülesannetega.
 
-5. Work with a text file:
-Create functions to write and read data from a text file.
-Define the data format in the file, for example, each line could represent one day with tasks.
+6. **Ülesannete liides:**
+   Lisa liideselemendid ülesannete sisestamiseks. Loo nupud ülesannete lisamiseks tekstifaili.
 
-6. Task Interface:
-Add interface elements for entering tasks.
-Create buttons for adding tasks to the text file.
+7. **Kuva ülesanded kalendril:**
+   Rakenda funktsionaalsus päevade märkimiseks ülesannetega kalendril.
 
-7. Display tasks on the calendar:
-Implement functionality to mark days with tasks on the calendar.
+8. **Andmete manipuleerimine failis:**
+   Lisa võimalus redigeerida ja kustutada ülesandeid tekstifailist.
 
-8. Manipulate data in the file:
-Add the ability to edit and delete tasks from the text file.
+9. **Testimine:**
+    Tee rakenduse testimine kindlaks, et kalender toimib õigesti ja ülesanded salvestatakse tekstifailis.
 
-9. Testing:
-Conduct testing of the application to ensure that the calendar works correctly and tasks are saved in the text file.
+10. **Täiustamine ja Parandamine:**
+    Rakenda võimalus märkida ülesanne tehtuks. Lisa valikud ülesannete redigeerimiseks ja kustutamiseks.
 
-10. Refinement and Improvement:
-Implement the ability to mark task completion.
-Add options for editing and deleting tasks.
+11. **Dokumentatsioon ja Optimeerimine:**
+    Kirjuta lühike dokumentatsioon koodi kohta. Optimeeri koodi vajadusel.
 
-11. Documentation and Optimization:
-Write brief documentation for the code.
-Optimize the code if necessary.
-
-12. Completion:
-Verify that all functions work correctly.
-Prepare your project for release.
-
-
-
-задачи до 16. понять, как работает календарь и добавить его в графику. создать файл, в который пойдут задачи. соединить его с календарем
+12. **Lõpuleviimine:**
+    Kontrolli, et kõik funktsioonid töötavad õigesti. Valmista oma projekt väljaande jaoks ette.
