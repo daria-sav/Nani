@@ -23,7 +23,7 @@ def ülesanne_lisamine():
     # Salvestamine ülesandefaili
     ülesanne = {"id": task_id, "date": valitud_kuupäev, "text": ülesande_tekst}
     ülesanne_salvestamine(ülesanne)
-    
+
     # Sisestusvälja tühjendamine
     sisestatud_tekst.delete(0, tk.END) 
 
@@ -39,7 +39,7 @@ def paste_text():
         sisestatud_tekst.insert(tk.END, pasted_text)
     except tk.TclError:
         pass
-      
+
 # Hotkeys
 def on_key_press(event):
     if märkmik == juur.focus_get() and event.keysym == 'Return':
@@ -105,7 +105,7 @@ def ülesannete_laadimine(date):
         pass
 
     return ülesanded
-  
+
 def lõpetatud_ülesannete_kustutamine(task_id):
     # Eemalda lõpetatud ülesanne failist
     ülesanded = kõikide_ülesannete_laadimine()
@@ -144,7 +144,7 @@ def laadi_märkmik():
             märkmik.insert(tk.END, märkmik_text)
     except FileNotFoundError:
         pass
-      
+
 def toggle_media():
     if media_button.winfo_ismapped():
         media_button.grid_forget()
